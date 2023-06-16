@@ -76,6 +76,7 @@ incrementButton.addEventListener("click", () => {
   currentValue += 1;
   counterValue.textContent = currentValue;
 });
+
 // 5
 
 const nameInput = document.getElementById("name-input");
@@ -90,3 +91,22 @@ nameInput.addEventListener("input", () => {
     nameOutput.textContent = name;
   }
 });
+
+// 6
+
+const input = document.getElementById("validation-input");
+
+input.addEventListener("blur", () => {
+  const expectedLength = input.getAttribute("data-length");
+  const inputValue = input.value.trim();
+  const isValid = inputValue.length === parseInt(expectedLength);
+
+  if (isValid) {
+    input.classList.remove("invalid");
+    input.classList.add("valid");
+  } else {
+    input.classList.remove("valid");
+    input.classList.add("invalid");
+  }
+});
+
