@@ -1,3 +1,4 @@
+// 1
 const categoriesList = document.querySelector('#categories');
 const categories = categoriesList.querySelectorAll('.item');
 
@@ -12,7 +13,7 @@ categories.forEach(category => {
 });
 
 
-
+// 2
 
 const ingredients = [
   "Potatoes",
@@ -32,7 +33,7 @@ ingredients.forEach(ingredient => {
   ingredientsList.appendChild(listItem);
 });
 
-
+// 3
 
 const images = [
   {
