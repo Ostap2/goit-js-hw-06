@@ -28,3 +28,6 @@
   #validation-input.invalid {
     border-color: #f44336;
   }
+  body {
+    transition: background-color 0.3s ease;
+  }
