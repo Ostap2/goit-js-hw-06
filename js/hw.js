@@ -77,6 +77,7 @@ incrementButton.addEventListener("click", () => {
   counterValue.textContent = currentValue;
 });
 // 5
+
 const nameInput = document.getElementById("name-input");
 const nameOutput = document.getElementById("name-output");
 
