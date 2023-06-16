@@ -10,3 +10,28 @@ categories.forEach(category => {
   console.log('Category:', categoryName);
   console.log('Elements:', categoryElements.length);
 });
+
+
+
+
+const ingredients = [
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
+];
+
+const ingredientsList = document.getElementById('ingredients');
+
+ingredients.forEach(ingredient => {
+  const listItem = document.createElement('li');
+  listItem.textContent = ingredient;
+  listItem.classList.add('item');
+  ingredientsList.appendChild(listItem);
+});
+
+
+
+
