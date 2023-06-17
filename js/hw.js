@@ -100,10 +100,11 @@ nameInput.addEventListener("input", () => {
 
 // 6
 
+
 const input = document.getElementById('validation-input');
 const expectedLength = input.dataset.length;
 
-input.value = ' '.repeat(Number(expectedLength));
+input.value = '|'.padEnd(Number(expectedLength), ' ');
 
 input.addEventListener('blur', () => {
   const inputValue = input.value.trim();
@@ -116,13 +117,8 @@ input.addEventListener('blur', () => {
     input.classList.add('invalid');
     input.classList.remove('valid');
   }
-
-  if (sliderPosition === Math.floor(expectedLength / 2)) {
-    input.classList.add('medium-text');
-  } else {
-    input.classList.remove('medium-text');
-  }
 });
+
 
 
 
