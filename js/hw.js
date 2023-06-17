@@ -107,6 +107,7 @@ input.value = ' '.repeat(Number(expectedLength));
 
 input.addEventListener('blur', () => {
   const inputValue = input.value.trim();
+  const sliderPosition = inputValue.indexOf('|');
 
   if (inputValue.length === Number(expectedLength)) {
     input.classList.add('valid');
@@ -114,6 +115,12 @@ input.addEventListener('blur', () => {
   } else {
     input.classList.add('invalid');
     input.classList.remove('valid');
+  }
+
+  if (sliderPosition === Math.floor(expectedLength / 2)) {
+    input.classList.add('medium-text');
+  } else {
+    input.classList.remove('medium-text');
   }
 });
 
