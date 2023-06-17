@@ -107,8 +107,7 @@ const expectedLength = input.dataset.length;
 
 
 input.addEventListener('blur', (event) => {
-  const inputValue = event.targer.value.trim();
-  const sliderPosition = inputValue.indexOf('|');
+  const inputValue = event.target.value.trim();
 
   if (inputValue.length === Number(expectedLength)) {
     input.classList.add('valid');
