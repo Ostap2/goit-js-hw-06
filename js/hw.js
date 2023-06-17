@@ -100,28 +100,21 @@ nameInput.addEventListener("input", () => {
 
 // 6
 
-const input = document.getElementById("validation-input");
+const input = document.getElementById('validation-input');
 
-input.addEventListener("blur", () => {
-  const expectedLength = input.getAttribute("data-length");
+input.addEventListener('blur', () => {
   const inputValue = input.value.trim();
-  const isValid = inputValue.length === parseInt(expectedLength);
+  const expectedLength = input.dataset.length;
 
-  if (isValid) {
-    input.classList.remove("invalid");
-    input.classList.add("valid");
+  if (inputValue.length === Number(expectedLength)) {
+    input.classList.add('valid');
+    input.classList.remove('invalid');
   } else {
-    input.classList.remove("valid");
-    input.classList.add("invalid");
+    input.classList.add('invalid');
+    input.classList.remove('valid');
   }
 });
 
-const element = document.getElementById('myElement');
-
-input.addEventListener('input', () => {
-  const value = input.value;
-  element.textContent = value;
-});
 
 // 7
 
