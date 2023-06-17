@@ -101,10 +101,12 @@ nameInput.addEventListener("input", () => {
 // 6
 
 const input = document.getElementById('validation-input');
+const expectedLength = input.dataset.length;
+
+input.value = ' '.repeat(Number(expectedLength));
 
 input.addEventListener('blur', () => {
   const inputValue = input.value.trim();
-  const expectedLength = input.dataset.length;
 
   if (inputValue.length === Number(expectedLength)) {
     input.classList.add('valid');
@@ -114,6 +116,7 @@ input.addEventListener('blur', () => {
     input.classList.remove('valid');
   }
 });
+
 
 
 // 7
