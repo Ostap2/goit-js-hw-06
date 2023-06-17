@@ -1,16 +1,17 @@
 // 1
-const categoriesList = document.querySelector('#categories');
-const categories = categoriesList.querySelectorAll('.item');
+const categoriesList = document.getElementById('categories');
+const categories = categoriesList.getElementsByClassName('item');
 
 console.log('Number of categories:', categories.length);
 
-categories.forEach(category => {
+Array.from(categories).forEach(category => {
   const categoryName = category.querySelector('h2').textContent;
-  const categoryElements = category.querySelectorAll('li');
+  const categoryElements = category.getElementsByTagName('li');
 
   console.log('Category:', categoryName);
   console.log('Elements:', categoryElements.length);
 });
+
 
 
 // 2
@@ -26,12 +27,17 @@ const ingredients = [
 
 const ingredientsList = document.getElementById('ingredients');
 
-ingredients.forEach(ingredient => {
+const listItems = ingredients.map(ingredient => {
   const listItem = document.createElement('li');
   listItem.textContent = ingredient;
   listItem.classList.add('item');
+  return listItem;
+});
+
+listItems.forEach(listItem => {
   ingredientsList.appendChild(listItem);
 });
+
 
 // 3
 
@@ -108,6 +114,13 @@ input.addEventListener("blur", () => {
     input.classList.remove("valid");
     input.classList.add("invalid");
   }
+});
+
+const element = document.getElementById('myElement');
+
+input.addEventListener('input', () => {
+  const value = input.value;
+  element.textContent = value;
 });
 
 // 7
