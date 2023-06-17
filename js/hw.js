@@ -104,10 +104,10 @@ nameInput.addEventListener("input", () => {
 const input = document.getElementById('validation-input');
 const expectedLength = input.dataset.length;
 
-input.value = '|'.padEnd(Number(expectedLength), ' ');
 
-input.addEventListener('blur', () => {
-  const inputValue = input.value.trim();
+
+input.addEventListener('blur', (event) => {
+  const inputValue = event.targer.value.trim();
   const sliderPosition = inputValue.indexOf('|');
 
   if (inputValue.length === Number(expectedLength)) {
@@ -118,7 +118,6 @@ input.addEventListener('blur', () => {
     input.classList.remove('valid');
   }
 });
-
 
 
 
