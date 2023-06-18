@@ -129,7 +129,6 @@ fontSizeControl.addEventListener('input', function() {
   const fontSize = fontSizeControl.value;
   textSpan.style.fontSize = fontSize + 'px';
 });
-
 // 8
 
 const loginForm = document.querySelector('.login-form');
