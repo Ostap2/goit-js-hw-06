@@ -1,4 +1,3 @@
-
 const ingredients = [
   "Potatoes",
   "Mushrooms",
@@ -8,15 +7,12 @@ const ingredients = [
   "Condiments",
 ];
 
-const ingredientsList = document.getElementById('ingredients');
-
+const ingredientsList = document.querySelector('#ingredients');
 const listItems = ingredients.map(ingredient => {
   const listItem = document.createElement('li');
   listItem.textContent = ingredient;
   listItem.classList.add('item');
-  return listItem;
+  return listItem.outerHTML;
 });
 
-listItems.forEach(listItem => {
-  ingredientsList.appendChild(listItem);
-});
+ingredientsList.innerHTML = listItems.join('');
